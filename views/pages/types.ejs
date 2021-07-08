@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head'); %>
+</head>
+
+<body class="container">
+
+    <header>
+        <%- include('../partials/header'); %>
+    </header>
+
+    <main>
+        <h1>
+            <%= titleValue %>
+                <% systemTypes.forEach( function(currType) { %>
+                    <h2><%= currType.title %></h2>
+                    <table class="table">
+                    
+                    <thead>
+                        <tr>
+                            <th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% currType.content.forEach(currElement=> { %>
+                            <tr>
+                                <th scope="row">
+                                    <%= currElement.id %>
+                                </th>
+                                <th>
+                                    <%= currElement.name %>
+                                </th>
+                                <th>
+                                    <%= currElement.description %>
+                                </th>
+                            </tr>
+                            <% }) %>
+                    </tbody>
+                    </table>
+                    <% }); %>
+
+
+
+                        </div>
+    </main>
+
+    <footer>
+        <%- include('../partials/footer'); %>
+    </footer>
+
+</body>
+
+</html>
